@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="buildfire" content="disableTheme=true">
+
+    <title>Template • TodoMVC</title>
+
+    <!-- Load helper.css to use our helper classes.
+    <link href="../../../../styles/helper.css" rel="stylesheet">
+    -->
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- buildfire.options.disableTheme -->
+
+    <!-- 1. Load libraries -->
+    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2.dev.js"></script>
+
+    <script type="text/javascript" src="../../../scripts/buildfire.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: { emitDecoratorMetadata: true },
+            packages: {'src': {defaultExtension: 'ts'}}
+        });
+        System.import('src/main')
+                .then(null, console.error.bind(console));
+    </script>
+
+</head>
+<body>
+
+<my-app>Loading...</my-app>
+
+</body>
+</html>

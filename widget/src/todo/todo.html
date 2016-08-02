@@ -1,0 +1,50 @@
+<section class="todoapp">
+    <header class="header">
+        <h1>{{ title }}</h1>
+        <input #newTodo class="new-todo" placeholder="What needs to be done?" autofocus
+               (keyup.enter)="addTodo(newTodo.value); newTodo.value='' ">
+    </header>
+
+    <!-- This section should be hidden by default and shown when there are todos -->
+    <section class="main">
+        <input (click)="toggleAll()" class="toggle-all" type="checkbox">
+        <label for="toggle-all">Mark all as complete</label>
+        <ul class="todo-list">
+            <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+
+            <li *ngFor="#todo of (todos | status: filterStatus)" [ngClass]="{completed: todo.isCompleted}">
+                <div class="view">
+                    <input (click)=toggleTodoStatus(todo.name) class="toggle" type="checkbox" [checked]="todo.isCompleted">
+                    <label>{{todo.name}}</label>
+                    <button class="destroy" (click)="deleteTodo(todo.name)"></button>
+                </div>
+                <input class="edit" value="Create a TodoMVC template">
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- This footer should hidden by default and shown when there are todos -->
+    <footer class="footer" [hidden]="todos.length == 0">
+        <!-- This should be `0 items left` by default -->
+        <span class="todo-count"><strong>{{ getActiveCount() }}</strong> items left</span>
+        <!-- Remove this if you don't implement routing -->
+        <ul class="filters">
+            <li>
+                <a [ngClass]="{selected: allSelected}" href="#/" (click)="showAll()">All</a>
+            </li>
+            <li>
+                <a [ngClass]="{selected: activeSelected}" href="#/active" (click)="showActive()">Active</a>
+            </li>
+            <li>
+                <a [ngClass]="{selected: completeSelected}" href="#/completed" (click)="showCompleted()">Completed</a>
+            </li>
+        </ul>
+        <!-- Hidden if no completed items are left ↓ -->
+        <button class="clear-completed" (click)="clearCompleted()">Clear completed</button>
+    </footer>
+</section>
+<footer class="info">
+    <p>Double-click to edit a todo</p>
+    <p>Built with <a href="http://todomvc.com">TodoMVC</a></p>
+</footer>

@@ -1,0 +1,22 @@
+{
+  "author":"SUPINFO AppFActory"
+,"pluginName":"Todo"
+,"pluginDescription":"Baseline todo plugin"
+,"supportEmail":"supinfoappfactory@supinfo.com"
+,"control":{
+  "content":{
+    "enabled":true
+  }
+, "design":{
+    "enabled":false
+  }
+, "settings":{
+    "enabled":false
+  }
+}
+,"widget":{
+
+},
+  "features" : [],
+  "languages" : ["en"]
+}
