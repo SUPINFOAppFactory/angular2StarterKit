@@ -1,5 +1,5 @@
 # angular2StarterKit
-SUPINFO AppFactory Plugin developed in Angular 2.0
+Plugin developed in Angular 2.0
 
 Angular2 starter kit plugin
 
