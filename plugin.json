@@ -1,8 +1,8 @@
 {
-  "author":"SUPINFO AppFActory"
+  "author":""
 ,"pluginName":"Todo"
 ,"pluginDescription":"Baseline todo plugin"
-,"supportEmail":"supinfoappfactory@supinfo.com"
+,"supportEmail":""
 ,"control":{
   "content":{
     "enabled":true
